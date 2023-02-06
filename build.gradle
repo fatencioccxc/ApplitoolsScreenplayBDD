@@ -1,12 +1,7 @@
-plugins {
+plugins{
     id 'java'
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.4.2"
 }
-
-defaultTasks 'clean', 'test', 'aggregate'
-
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -15,37 +10,27 @@ repositories {
     mavenCentral()
 }
 
+
 ext {
-    slf4jVersion = '1.7.7'
-    serenityCoreVersion = '3.3.4'
-    serenityCucumberVersion = '3.3.4'
-    junitVersion = '4.13.1'
-    assertJVersion = '3.23.1'
-    logbackVersion = '1.2.10'
+    serenityVersion = '2.0.82'
+    serenityCucumberVersion = '1.9.45'
+    seleniumVersion = '3.14.0'
 }
 
 dependencies {
-
-    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
-
-    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
-            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
-            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
-            "junit:junit:${junitVersion}",
-            "org.junit.platform:junit-platform-launcher:1.8.2",
-            "org.junit.jupiter:junit-jupiter-engine:5.8.2",
-            "org.junit.vintage:junit-vintage-engine:5.8.2",
-            "org.assertj:assertj-core:${assertJVersion}"
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.9.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    testImplementation "org.assertj:assertj-core:3.11.1"
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityVersion"
+    implementation "org.seleniumhq.selenium:selenium-server:$rootProject.ext.seleniumVersion"
 }
 
 test {
     useJUnitPlatform()
-    testLogging.showStandardStreams = true
-    systemProperties System.getProperties()
 }
-
-gradle.startParameter.continueOnFailure = true
-
-test.finalizedBy("aggregate")
