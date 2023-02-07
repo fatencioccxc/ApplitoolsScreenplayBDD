@@ -1,4 +1,4 @@
-package runner;
+package com.applitools.login;
 
 
 import cucumber.api.CucumberOptions;
@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/login/login.feature",
         tags = "",
-        glue = "stepDefinitions",
+        glue = "com/applitools/login",
         snippets = SnippetType.CAMELCASE
 )
 public class LoginRunner {

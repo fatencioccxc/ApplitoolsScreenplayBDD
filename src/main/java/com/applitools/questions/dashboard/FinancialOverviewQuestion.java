@@ -1,9 +1,8 @@
-package questions;
+package com.applitools.dashboard;
 
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.questions.TextContent;
-import ui.Dashboard.FinancialOverview;
+import com.applitools.ui.dashboard.FinancialOverview;
 
 public class FinancialOverviewQuestion {
 

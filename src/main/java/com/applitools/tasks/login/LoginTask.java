@@ -1,11 +1,11 @@
-package tasks.Login;
+package com.applitools.login;
 
+import com.applitools.ui.login.LoginForm;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import ui.Login.LoginForm;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

@@ -1,10 +1,9 @@
-package questions;
+package com.applitools.dashboard;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.questions.TextContent;
-import ui.Dashboard.FinancialOverview;
+import com.applitools.ui.dashboard.FinancialOverview;
 
 public class CreditAvailableQuestion implements Question<String> {
 

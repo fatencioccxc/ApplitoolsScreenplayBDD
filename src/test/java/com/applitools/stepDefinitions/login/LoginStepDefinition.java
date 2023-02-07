@@ -1,15 +1,12 @@
-package stepDefinitions;
+package com.applitools.login;
 
 
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.actors.OnStage;
-import net.serenitybdd.screenplay.actors.OnlineCast;
-import questions.FinancialOverviewQuestion;
-import tasks.Login.LoginTask;
+import com.applitools.dashboard.FinancialOverviewQuestion;
+import com.applitools.login.LoginTask;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -20,11 +17,6 @@ public class LoginStepDefinition {
 
     private String actorName;
 
-    @Before
-    public void SetTheStage() {
-        OnStage.setTheStage(new OnlineCast());
-    }
-
     @Given("^(.*) has an active account")
     public void hasAnActiveAccount(String actor) {
         this.actorName = actor;
@@ -33,8 +25,10 @@ public class LoginStepDefinition {
     @When("he sends their valid credentials")
     public void heSendsTheirValidCredentials() {
         theActorCalled(this.actorName).attemptsTo(
+
                 Open.url("https://demo.applitools.com"),
                 LoginTask.withCredentials("frank.atencio", "password")
+
         );
     }
 

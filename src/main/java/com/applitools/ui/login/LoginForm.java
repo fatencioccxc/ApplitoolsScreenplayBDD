@@ -1,6 +1,5 @@
-package ui.Login;
+package ui.login;
 
-import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class LoginForm {
