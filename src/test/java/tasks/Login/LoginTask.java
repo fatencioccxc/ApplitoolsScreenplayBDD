@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import ui.Login.Login;
+import ui.Login.LoginForm;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -24,9 +24,9 @@ public class LoginTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(this.username).into(Login.USER_NAME_FIELD),
-                Enter.theValue(this.password).into(Login.PASSWORD_FIELD),
-                Click.on(Login.LOGIN_BUTTON)
+                Enter.theValue(this.username).into(LoginForm.USER_NAME_FIELD),
+                Enter.theValue(this.password).into(LoginForm.PASSWORD_FIELD),
+                Click.on(LoginForm.LOGIN_BUTTON)
         );
     }
 }

@@ -8,9 +8,13 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import questions.FinancialOverviewQuestion;
 import tasks.Login.LoginTask;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class LoginStepDefinition {
 
@@ -36,5 +40,19 @@ public class LoginStepDefinition {
 
     @Then("he should have access to manage his account")
     public void heShouldHaveAccessToManageHisAccount() {
+        theActorInTheSpotlight().should(
+
+                seeThat(
+                    "The displayed credit available",
+                    FinancialOverviewQuestion.creditAvailable(),
+                    equalTo("$17,800")
+                ),
+                seeThat(
+                        "The displayed total balance ",
+                        FinancialOverviewQuestion.totalBalance(),
+                        equalTo("$350")
+                )
+
+        );
     }
 }
