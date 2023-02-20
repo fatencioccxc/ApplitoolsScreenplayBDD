@@ -1,4 +1,4 @@
-package ui.dashboard;
+package com.applitools.ui.dashboard;
 
 import org.openqa.selenium.By;
 

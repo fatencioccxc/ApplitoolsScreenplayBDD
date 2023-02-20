@@ -1,4 +1,4 @@
-package ui.login;
+package com.applitools.ui.login;
 
 import org.openqa.selenium.By;
 

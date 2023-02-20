@@ -1,4 +1,4 @@
-package com.applitools.login;
+package com.applitools.tasks.login;
 
 import com.applitools.ui.login.LoginForm;
 import net.serenitybdd.screenplay.Actor;

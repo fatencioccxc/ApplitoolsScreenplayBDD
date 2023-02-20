@@ -1,18 +1,19 @@
-package com.applitools.login;
+package com.applitools.runner.login;
 
-
-import cucumber.api.CucumberOptions;
-import cucumber.api.SnippetType;
+import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
+import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
+
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/login/login.feature",
-        tags = "",
-        glue = "com/applitools/login",
-        snippets = SnippetType.CAMELCASE
+        features = "src/test/resources/features/login",
+        plugin = {"pretty"},
+        tags = "@Login",
+        glue = "com/applitools/stepDefinitions/login",
+        snippets = CAMELCASE
 )
-public class LoginRunner {
+class LoginRunner {
 
 }

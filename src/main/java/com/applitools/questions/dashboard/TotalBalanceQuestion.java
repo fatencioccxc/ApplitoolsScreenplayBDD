@@ -1,4 +1,4 @@
-package com.applitools.dashboard;
+package com.applitools.questions.dashboard;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
